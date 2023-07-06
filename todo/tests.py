@@ -13,7 +13,7 @@ class SampleTestCase(TestCase):
 class TaskModelTestCase(TestCase):
     def test_create_task1(self):
         due = timezone.make_aware(datetime(2023, 6, 30, 23, 59, 59))
-        task = Task(title="task1",due_at=due)
+        task = Task(title="task1", due_at=due)
         task.save()
 
         task = Task.objects.get(pk=task.pk)
@@ -98,4 +98,3 @@ class TodoViewTestCase(TestCase):
         self.assertEqual(response.templates[0].name, "todo/index.html")
         self.assertEqual(response.context["tasks"][0], task1)
         self.assertEqual(response.context["tasks"][1], task2)
-
