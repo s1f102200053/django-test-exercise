@@ -19,5 +19,5 @@ def index(request):
     context = {
         "tasks": tasks
     }
+    
     return render(request, "todo/index.html", context)
-
